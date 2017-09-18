@@ -10,6 +10,10 @@
 
 #import "ViewController.h"
 
+#import "LTKitViewController.h"
+#import "LTComponentsViewController.h"
+#import "LTLabViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -23,9 +27,26 @@
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     self.window.backgroundColor = [UIColor colorWithRed:0.29 green:0.95 blue:0.63 alpha:1.00];
     
-    ViewController *vc = [ViewController new];
+    LTKitViewController *uiKitVC = [LTKitViewController new];
+//    uiKitVC.hidesBottomBarWhenPushed = YES;
+    UINavigationController *uikitNav = [[UINavigationController alloc] initWithRootViewController:uiKitVC];
+    uiKitVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"LTKit" image:[[UIImage imageNamed:@"icon_gray_Viewlist"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"icon_yellow_Viewlist"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    self.window.rootViewController = vc;
+    LTComponentsViewController *componentsVC = [LTComponentsViewController new];
+//    componentsVC.hidesBottomBarWhenPushed = YES;
+    UINavigationController *componentsNav = [[UINavigationController alloc] initWithRootViewController:componentsVC];
+    componentsVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Components" image:[[UIImage imageNamed:@"icon_gray_all"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"icon_yellow_all"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    LTLabViewController *labVC = [LTLabViewController new];
+//    labVC.hidesBottomBarWhenPushed = YES;
+    UINavigationController *labNav = [[UINavigationController alloc] initWithRootViewController:labVC];
+    labVC.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Lab" image:[[UIImage imageNamed:@"icon_gray_lights"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:@"icon_yellow_lights"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    
+    tabBarController.viewControllers = @[uikitNav, componentsNav, labNav];
+    
+    self.window.rootViewController = tabBarController;
     
     [self.window makeKeyAndVisible];
     
