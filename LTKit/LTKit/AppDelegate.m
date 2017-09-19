@@ -25,7 +25,7 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
-    self.window.backgroundColor = [UIColor colorWithRed:0.29 green:0.95 blue:0.63 alpha:1.00];
+    self.window.backgroundColor = [UIColor colorWithRed:0.89 green:0.90 blue:0.90 alpha:1.00];
     
     LTKitViewController *uiKitVC = [LTKitViewController new];
 //    uiKitVC.hidesBottomBarWhenPushed = YES;
@@ -45,6 +45,8 @@
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     
     tabBarController.viewControllers = @[uikitNav, componentsNav, labNav];
+    
+    tabBarController.tabBar.tintColor = [UIColor colorWithRed:1.00 green:0.80 blue:0.32 alpha:1.00];
     
     self.window.rootViewController = tabBarController;
     
