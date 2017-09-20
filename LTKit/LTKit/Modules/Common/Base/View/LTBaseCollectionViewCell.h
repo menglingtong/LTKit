@@ -10,4 +10,8 @@
 
 @interface LTBaseCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, strong) UIImageView *iconImageView;
+
+@property (nonatomic, strong) UILabel *nameLabel;
+
 @end

@@ -23,6 +23,8 @@
 		8D7B0C8B1F72B4AA0043C168 /* LTKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C891F72B4AA0043C168 /* LTKitViewController.m */; };
 		8D7B0C901F72B5030043C168 /* LTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C8E1F72B5030043C168 /* LTBaseViewController.m */; };
 		8D7B0C931F72B5230043C168 /* LTBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C921F72B5230043C168 /* LTBaseCollectionViewCell.m */; };
+		8D7B0C981F72C85D0043C168 /* UIView+LTCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C971F72C85D0043C168 /* UIView+LTCategories.m */; };
+		8D7B0C9C1F72CB3A0043C168 /* LTKitCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C9B1F72CB3A0043C168 /* LTKitCollectionViewCell.m */; };
 		AEF81930AC6FDEC225AEFAB5 /* libPods-LTKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 143D383F45126ABECAD02243 /* libPods-LTKit.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,11 @@
 		8D7B0C8E1F72B5030043C168 /* LTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBaseViewController.m; sourceTree = "<group>"; };
 		8D7B0C911F72B5230043C168 /* LTBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBaseCollectionViewCell.h; sourceTree = "<group>"; };
 		8D7B0C921F72B5230043C168 /* LTBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBaseCollectionViewCell.m; sourceTree = "<group>"; };
+		8D7B0C961F72C85D0043C168 /* UIView+LTCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LTCategories.h"; sourceTree = "<group>"; };
+		8D7B0C971F72C85D0043C168 /* UIView+LTCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LTCategories.m"; sourceTree = "<group>"; };
+		8D7B0C991F72CA550043C168 /* LTKitCategories.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTKitCategories.h; sourceTree = "<group>"; };
+		8D7B0C9A1F72CB3A0043C168 /* LTKitCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitCollectionViewCell.h; sourceTree = "<group>"; };
+		8D7B0C9B1F72CB3A0043C168 /* LTKitCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKitCollectionViewCell.m; sourceTree = "<group>"; };
 		C8100E27FC77EC2DE02BE2E8 /* Pods-LTKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKitUITests/Pods-LTKitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D4EA9C173BF564DD296A6385 /* Pods-LTKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.debug.xcconfig"; sourceTree = "<group>"; };
 		ECD38D3E2BA18DD2F7EC5D0C /* libPods-LTKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +153,7 @@
 		8D7B0BF71F6D0D070043C168 /* LTKit */ = {
 			isa = PBXGroup;
 			children = (
+				8D7B0C951F72C7E20043C168 /* Categories */,
 				8D7B0C741F7027BB0043C168 /* Modules */,
 				8D7B0C791F7027BB0043C168 /* Resources */,
 				8D7B0C731F701C200043C168 /* AppDelegate */,
@@ -271,6 +279,8 @@
 		8D7B0C8A1F72B4AA0043C168 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8D7B0C9A1F72CB3A0043C168 /* LTKitCollectionViewCell.h */,
+				8D7B0C9B1F72CB3A0043C168 /* LTKitCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,6 +301,16 @@
 				8D7B0C921F72B5230043C168 /* LTBaseCollectionViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8D7B0C951F72C7E20043C168 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8D7B0C961F72C85D0043C168 /* UIView+LTCategories.h */,
+				8D7B0C971F72C85D0043C168 /* UIView+LTCategories.m */,
+				8D7B0C991F72CA550043C168 /* LTKitCategories.h */,
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 		D887A992CAA69DF593692C8C /* Pods */ = {
@@ -604,6 +624,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D7B0C001F6D0D070043C168 /* ViewController.m in Sources */,
+				8D7B0C9C1F72CB3A0043C168 /* LTKitCollectionViewCell.m in Sources */,
 				8D7B0C831F7038A40043C168 /* LTLabViewController.m in Sources */,
 				8D7B0C931F72B5230043C168 /* LTBaseCollectionViewCell.m in Sources */,
 				8D7B0C861F7038B00043C168 /* LTComponentsViewController.m in Sources */,
@@ -611,6 +632,7 @@
 				8D7B0C901F72B5030043C168 /* LTBaseViewController.m in Sources */,
 				8D7B0C061F6D0D070043C168 /* LTKit.xcdatamodeld in Sources */,
 				8D7B0C8B1F72B4AA0043C168 /* LTKitViewController.m in Sources */,
+				8D7B0C981F72C85D0043C168 /* UIView+LTCategories.m in Sources */,
 				8D7B0BFA1F6D0D070043C168 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
