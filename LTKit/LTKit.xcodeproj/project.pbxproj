@@ -18,10 +18,11 @@
 		8D7B0C0B1F6D0D070043C168 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D7B0C091F6D0D070043C168 /* LaunchScreen.storyboard */; };
 		8D7B0C161F6D0D080043C168 /* LTKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C151F6D0D080043C168 /* LTKitTests.m */; };
 		8D7B0C211F6D0D080043C168 /* LTKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C201F6D0D080043C168 /* LTKitUITests.m */; };
-		8D7B0C7D1F7027F50043C168 /* LTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C7C1F7027F50043C168 /* LTBaseViewController.m */; };
-		8D7B0C801F7028180043C168 /* LTKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C7F1F7028180043C168 /* LTKitViewController.m */; };
 		8D7B0C831F7038A40043C168 /* LTLabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C821F7038A40043C168 /* LTLabViewController.m */; };
 		8D7B0C861F7038B00043C168 /* LTComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C851F7038B00043C168 /* LTComponentsViewController.m */; };
+		8D7B0C8B1F72B4AA0043C168 /* LTKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C891F72B4AA0043C168 /* LTKitViewController.m */; };
+		8D7B0C901F72B5030043C168 /* LTBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C8E1F72B5030043C168 /* LTBaseViewController.m */; };
+		8D7B0C931F72B5230043C168 /* LTBaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0C921F72B5230043C168 /* LTBaseCollectionViewCell.m */; };
 		AEF81930AC6FDEC225AEFAB5 /* libPods-LTKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 143D383F45126ABECAD02243 /* libPods-LTKit.a */; };
 /* End PBXBuildFile section */
 
@@ -67,14 +68,16 @@
 		8D7B0C201F6D0D080043C168 /* LTKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LTKitUITests.m; sourceTree = "<group>"; };
 		8D7B0C221F6D0D080043C168 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D7B0C721F701A080043C168 /* LTPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTPrefixHeader.pch; sourceTree = "<group>"; };
-		8D7B0C7B1F7027F50043C168 /* LTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBaseViewController.h; sourceTree = "<group>"; };
-		8D7B0C7C1F7027F50043C168 /* LTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBaseViewController.m; sourceTree = "<group>"; };
-		8D7B0C7E1F7028180043C168 /* LTKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitViewController.h; sourceTree = "<group>"; };
-		8D7B0C7F1F7028180043C168 /* LTKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKitViewController.m; sourceTree = "<group>"; };
 		8D7B0C811F7038A40043C168 /* LTLabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTLabViewController.h; sourceTree = "<group>"; };
 		8D7B0C821F7038A40043C168 /* LTLabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTLabViewController.m; sourceTree = "<group>"; };
 		8D7B0C841F7038B00043C168 /* LTComponentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTComponentsViewController.h; sourceTree = "<group>"; };
 		8D7B0C851F7038B00043C168 /* LTComponentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTComponentsViewController.m; sourceTree = "<group>"; };
+		8D7B0C881F72B4AA0043C168 /* LTKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTKitViewController.h; sourceTree = "<group>"; };
+		8D7B0C891F72B4AA0043C168 /* LTKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTKitViewController.m; sourceTree = "<group>"; };
+		8D7B0C8D1F72B5030043C168 /* LTBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBaseViewController.h; sourceTree = "<group>"; };
+		8D7B0C8E1F72B5030043C168 /* LTBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBaseViewController.m; sourceTree = "<group>"; };
+		8D7B0C911F72B5230043C168 /* LTBaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTBaseCollectionViewCell.h; sourceTree = "<group>"; };
+		8D7B0C921F72B5230043C168 /* LTBaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTBaseCollectionViewCell.m; sourceTree = "<group>"; };
 		C8100E27FC77EC2DE02BE2E8 /* Pods-LTKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKitUITests/Pods-LTKitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D4EA9C173BF564DD296A6385 /* Pods-LTKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.debug.xcconfig"; sourceTree = "<group>"; };
 		ECD38D3E2BA18DD2F7EC5D0C /* libPods-LTKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,8 +237,8 @@
 		8D7B0C781F7027BB0043C168 /* LTKit */ = {
 			isa = PBXGroup;
 			children = (
-				8D7B0C7E1F7028180043C168 /* LTKitViewController.h */,
-				8D7B0C7F1F7028180043C168 /* LTKitViewController.m */,
+				8D7B0C871F72B4AA0043C168 /* Controller */,
+				8D7B0C8A1F72B4AA0043C168 /* View */,
 			);
 			path = LTKit;
 			sourceTree = "<group>";
@@ -250,10 +253,44 @@
 		8D7B0C7A1F7027DF0043C168 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				8D7B0C7B1F7027F50043C168 /* LTBaseViewController.h */,
-				8D7B0C7C1F7027F50043C168 /* LTBaseViewController.m */,
+				8D7B0C8C1F72B5030043C168 /* Controller */,
+				8D7B0C8F1F72B5030043C168 /* View */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		8D7B0C871F72B4AA0043C168 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D7B0C881F72B4AA0043C168 /* LTKitViewController.h */,
+				8D7B0C891F72B4AA0043C168 /* LTKitViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8D7B0C8A1F72B4AA0043C168 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D7B0C8C1F72B5030043C168 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D7B0C8D1F72B5030043C168 /* LTBaseViewController.h */,
+				8D7B0C8E1F72B5030043C168 /* LTBaseViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8D7B0C8F1F72B5030043C168 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D7B0C911F72B5230043C168 /* LTBaseCollectionViewCell.h */,
+				8D7B0C921F72B5230043C168 /* LTBaseCollectionViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D887A992CAA69DF593692C8C /* Pods */ = {
@@ -568,11 +605,12 @@
 			files = (
 				8D7B0C001F6D0D070043C168 /* ViewController.m in Sources */,
 				8D7B0C831F7038A40043C168 /* LTLabViewController.m in Sources */,
-				8D7B0C801F7028180043C168 /* LTKitViewController.m in Sources */,
-				8D7B0C7D1F7027F50043C168 /* LTBaseViewController.m in Sources */,
+				8D7B0C931F72B5230043C168 /* LTBaseCollectionViewCell.m in Sources */,
 				8D7B0C861F7038B00043C168 /* LTComponentsViewController.m in Sources */,
 				8D7B0BFD1F6D0D070043C168 /* AppDelegate.m in Sources */,
+				8D7B0C901F72B5030043C168 /* LTBaseViewController.m in Sources */,
 				8D7B0C061F6D0D070043C168 /* LTKit.xcdatamodeld in Sources */,
+				8D7B0C8B1F72B4AA0043C168 /* LTKitViewController.m in Sources */,
 				8D7B0BFA1F6D0D070043C168 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

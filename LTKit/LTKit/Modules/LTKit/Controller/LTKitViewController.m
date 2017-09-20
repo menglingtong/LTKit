@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
+@property (nonatomic, strong) NSArray *dataSource;
+
 @end
 
 @implementation LTKitViewController
@@ -20,7 +22,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self initData];
     [self setupUI];
+}
+
+- (void)initData
+{
+    self.dataSource = @[@"LTDailogViewController"];
 }
 
 - (void)setupUI
@@ -33,7 +41,7 @@
 #pragma mark - collection view delegate && datasource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 20;
+    return self.dataSource.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
