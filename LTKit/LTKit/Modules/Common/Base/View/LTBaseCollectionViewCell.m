@@ -29,4 +29,12 @@
     [super layoutSubviews];
 }
 
+- (void)setNameStr:(NSString *)nameStr
+{
+    if (_nameStr != nameStr) {
+        
+        _nameStr = nameStr;
+    }
+}
+
 @end

@@ -11,5 +11,4 @@
 @interface LTKitCollectionViewCell : LTBaseCollectionViewCell
 
 
-
 @end

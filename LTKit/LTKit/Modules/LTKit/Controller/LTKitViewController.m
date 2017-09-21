@@ -8,6 +8,8 @@
 
 #import "LTKitViewController.h"
 
+#import "LTKitCollectionViewCell.h"
+
 @interface LTKitViewController ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -46,9 +48,10 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
+    LTKitCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LTKitCollectionViewCell class]) forIndexPath:indexPath];
     
     cell.backgroundColor = [UIColor whiteColor];
+    cell.nameStr = [self.dataSource objectAtIndex:indexPath.item];
     
     return cell;
 }
@@ -74,7 +77,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = [UIColor clearColor];
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
+        [_collectionView registerClass:[LTKitCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([LTKitCollectionViewCell class])];
     }
     
     return _collectionView;

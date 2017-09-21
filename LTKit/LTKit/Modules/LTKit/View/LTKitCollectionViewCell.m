@@ -19,6 +19,8 @@
         [self.contentView addSubview:self.iconImageView];
         
         self.nameLabel = [UILabel emptyFrameView];
+        self.nameLabel.font = [UIFont systemFontOfSize:12];
+        self.nameLabel.numberOfLines = 0;
         [self.contentView addSubview:self.nameLabel];
     }
     return self;
@@ -29,11 +31,27 @@
     [super layoutSubviews];
     
     [self.iconImageView makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+        make.edges.equalTo(UIEdgeInsetsMake(10, 30, 50, 30));
     }];
     
+    [self.nameLabel makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.contentView).offset(10);
+        make.right.bottom.equalTo(self.contentView).offset(-10);
+        make.top.equalTo(self.iconImageView.mas_bottom);
+    }];
     
 }
+
+- (void)setNameStr:(NSString *)nameStr
+{
+    [super setNameStr:nameStr];
+    
+    if ([nameStr isEqualToString:@"LTDailogViewController"]) {
+        self.iconImageView.image = [UIImage imageNamed:@"icon_grid_dialog"];
+        self.nameLabel.text = nameStr;
+    }
+}
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
