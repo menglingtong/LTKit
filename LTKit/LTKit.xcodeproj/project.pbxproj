@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		232F1698DC3904726716BF60 /* libPods-LTKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F53D5049DC571B49CCF2786 /* libPods-LTKitTests.a */; };
 		32809227794E2B4B5561F57C /* libPods-LTKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD38D3E2BA18DD2F7EC5D0C /* libPods-LTKitUITests.a */; };
+		8D4997DB1F809D1E0092407A /* LTUICommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4997DA1F809D1E0092407A /* LTUICommonViewController.m */; };
 		8D7B0BFA1F6D0D070043C168 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0BF91F6D0D070043C168 /* main.m */; };
 		8D7B0BFD1F6D0D070043C168 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0BFC1F6D0D070043C168 /* AppDelegate.m */; };
 		8D7B0C001F6D0D070043C168 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0BFF1F6D0D070043C168 /* ViewController.m */; };
@@ -52,6 +53,8 @@
 		4F53D5049DC571B49CCF2786 /* libPods-LTKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		560E22CC7C326F4362F0E9E0 /* Pods-LTKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.release.xcconfig"; sourceTree = "<group>"; };
 		79BDFDBAF2E5BDD2174AEC4B /* Pods-LTKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKitTests/Pods-LTKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D4997D91F809D1E0092407A /* LTUICommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUICommonViewController.h; sourceTree = "<group>"; };
+		8D4997DA1F809D1E0092407A /* LTUICommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUICommonViewController.m; sourceTree = "<group>"; };
 		8D7B0BF51F6D0D070043C168 /* LTKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7B0BF91F6D0D070043C168 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D7B0BFB1F6D0D070043C168 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LTKit/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -128,6 +131,47 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8D4997D41F809A580092407A /* LTKit */ = {
+			isa = PBXGroup;
+			children = (
+				8D4997D51F809CDB0092407A /* LTComponents */,
+				8D4997D61F809CDB0092407A /* LTCore */,
+				8D4997D71F809CDB0092407A /* LTFrame */,
+				8D4997D81F809CDB0092407A /* LTKitExtensions */,
+			);
+			path = LTKit;
+			sourceTree = "<group>";
+		};
+		8D4997D51F809CDB0092407A /* LTComponents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LTComponents;
+			sourceTree = "<group>";
+		};
+		8D4997D61F809CDB0092407A /* LTCore */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LTCore;
+			sourceTree = "<group>";
+		};
+		8D4997D71F809CDB0092407A /* LTFrame */ = {
+			isa = PBXGroup;
+			children = (
+				8D4997D91F809D1E0092407A /* LTUICommonViewController.h */,
+				8D4997DA1F809D1E0092407A /* LTUICommonViewController.m */,
+			);
+			path = LTFrame;
+			sourceTree = "<group>";
+		};
+		8D4997D81F809CDB0092407A /* LTKitExtensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LTKitExtensions;
+			sourceTree = "<group>";
+		};
 		8D7B0BEC1F6D0D070043C168 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +197,7 @@
 		8D7B0BF71F6D0D070043C168 /* LTKit */ = {
 			isa = PBXGroup;
 			children = (
+				8D4997D41F809A580092407A /* LTKit */,
 				8D7B0C951F72C7E20043C168 /* Categories */,
 				8D7B0C741F7027BB0043C168 /* Modules */,
 				8D7B0C791F7027BB0043C168 /* Resources */,
@@ -626,6 +671,7 @@
 				8D7B0C001F6D0D070043C168 /* ViewController.m in Sources */,
 				8D7B0C9C1F72CB3A0043C168 /* LTKitCollectionViewCell.m in Sources */,
 				8D7B0C831F7038A40043C168 /* LTLabViewController.m in Sources */,
+				8D4997DB1F809D1E0092407A /* LTUICommonViewController.m in Sources */,
 				8D7B0C931F72B5230043C168 /* LTBaseCollectionViewCell.m in Sources */,
 				8D7B0C861F7038B00043C168 /* LTComponentsViewController.m in Sources */,
 				8D7B0BFD1F6D0D070043C168 /* AppDelegate.m in Sources */,
