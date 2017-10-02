@@ -11,6 +11,7 @@
 		32809227794E2B4B5561F57C /* libPods-LTKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD38D3E2BA18DD2F7EC5D0C /* libPods-LTKitUITests.a */; };
 		8D4997DB1F809D1E0092407A /* LTUICommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4997DA1F809D1E0092407A /* LTUICommonViewController.m */; };
 		8D4997DE1F8104E80092407A /* LTUIAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4997DD1F8104E80092407A /* LTUIAlertController.m */; };
+		8D4997E41F82977B0092407A /* LTUIAlertController+UIAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4997E31F82977B0092407A /* LTUIAlertController+UIAppearance.m */; };
 		8D7B0BFA1F6D0D070043C168 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0BF91F6D0D070043C168 /* main.m */; };
 		8D7B0BFD1F6D0D070043C168 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0BFC1F6D0D070043C168 /* AppDelegate.m */; };
 		8D7B0C001F6D0D070043C168 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D7B0BFF1F6D0D070043C168 /* ViewController.m */; };
@@ -58,6 +59,8 @@
 		8D4997DA1F809D1E0092407A /* LTUICommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUICommonViewController.m; sourceTree = "<group>"; };
 		8D4997DC1F8104E80092407A /* LTUIAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUIAlertController.h; sourceTree = "<group>"; };
 		8D4997DD1F8104E80092407A /* LTUIAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUIAlertController.m; sourceTree = "<group>"; };
+		8D4997E21F82977B0092407A /* LTUIAlertController+UIAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LTUIAlertController+UIAppearance.h"; sourceTree = "<group>"; };
+		8D4997E31F82977B0092407A /* LTUIAlertController+UIAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LTUIAlertController+UIAppearance.m"; sourceTree = "<group>"; };
 		8D7B0BF51F6D0D070043C168 /* LTKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D7B0BF91F6D0D070043C168 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D7B0BFB1F6D0D070043C168 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LTKit/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -150,6 +153,8 @@
 			children = (
 				8D4997DC1F8104E80092407A /* LTUIAlertController.h */,
 				8D4997DD1F8104E80092407A /* LTUIAlertController.m */,
+				8D4997E21F82977B0092407A /* LTUIAlertController+UIAppearance.h */,
+				8D4997E31F82977B0092407A /* LTUIAlertController+UIAppearance.m */,
 			);
 			path = LTComponents;
 			sourceTree = "<group>";
@@ -685,6 +690,7 @@
 				8D7B0C8B1F72B4AA0043C168 /* LTKitViewController.m in Sources */,
 				8D4997DE1F8104E80092407A /* LTUIAlertController.m in Sources */,
 				8D7B0C981F72C85D0043C168 /* UIView+LTCategories.m in Sources */,
+				8D4997E41F82977B0092407A /* LTUIAlertController+UIAppearance.m in Sources */,
 				8D7B0BFA1F6D0D070043C168 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

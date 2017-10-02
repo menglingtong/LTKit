@@ -8,6 +8,37 @@
 
 #import "LTUIAlertController.h"
 
+@implementation LTUIAlertController (UIAppearance)
+
++ (void)initialize {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self appearance];
+    });
+}
+static LTUIAlertController *alertControllerAppearance;
++ (instancetype)appearance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self resetAppearance];
+    });
+    return alertControllerAppearance;
+}
+
++ (void)resetAppearance {
+    if (!alertControllerAppearance) {
+        
+        alertControllerAppearance = [[LTUIAlertController alloc] init];
+        
+        
+    }
+}
+
+
+@end
+
+#pragma mark - LTUIAlertController
+
 @interface LTUIAlertController ()
 
 @end
