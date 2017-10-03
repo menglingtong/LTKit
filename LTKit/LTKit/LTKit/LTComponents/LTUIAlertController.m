@@ -35,6 +35,97 @@
 // 操作系统版本号
 #define IOS_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue])
 
+static NSUInteger alertControllerCount = 0;
+
+#pragma mark - QMUIBUttonWrapView
+
+@interface LTUIAlertButtonWrapView : UIView
+
+//@property(nonatomic, strong) QMUIButton *button;
+
+@end
+
+@implementation LTUIAlertButtonWrapView
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+//        self.button = [[QMUIButton alloc] init];
+//        self.button.adjustsButtonWhenDisabled = NO;
+//        self.button.adjustsButtonWhenHighlighted = NO;
+//        [self addSubview:self.button];
+    }
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+//    self.button.frame = self.bounds;
+}
+
+@end
+
+
+#pragma mark - LTUIAlertAction
+
+@protocol LTUIAlertActionDelegate <NSObject>
+
+- (void)didClickAlertAction:(LTUIAlertAction *)alertAction;
+
+@end
+
+@interface LTUIAlertAction ()
+
+@property(nonatomic, strong) LTUIAlertButtonWrapView *buttonWrapView;
+@property(nonatomic, copy, readwrite) NSString *title;
+@property(nonatomic, assign, readwrite) LTUIAlertActionStyle style;
+@property(nonatomic, copy) void (^handler)(LTUIAlertAction *action);
+@property(nonatomic, weak) id<LTUIAlertActionDelegate> delegate;
+
+@end
+
+@implementation LTUIAlertAction
+
++ (instancetype)actionWithTitle:(NSString *)title style:(LTUIAlertActionStyle)style handler:(void (^)(LTUIAlertAction *action))handler {
+    LTUIAlertAction *alertAction = [[LTUIAlertAction alloc] init];
+    alertAction.title = title;
+    alertAction.style = style;
+    alertAction.handler = handler;
+    return alertAction;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.buttonWrapView = [[LTUIAlertButtonWrapView alloc] init];
+//        self.button.qmui_automaticallyAdjustTouchHighlightedInScrollView = YES;
+//        [self.button addTarget:self action:@selector(handleAlertActionEvent:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return self;
+}
+
+//- (QMUIButton *)button {
+//    return self.buttonWrapView.button;
+//}
+
+- (void)setEnabled:(BOOL)enabled {
+    _enabled = enabled;
+//    self.button.enabled = enabled;
+}
+
+- (void)handleAlertActionEvent:(id)sender {
+    // 需要先调delegate，里面会先恢复keywindow
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didClickAlertAction:)]) {
+        [self.delegate didClickAlertAction:self];
+    }
+    // 再调block回调
+    if (self.handler) {
+        self.handler(self);
+    }
+}
+
+@end
+
 @implementation LTUIAlertController (UIAppearance)
 
 + (void)initialize {
@@ -87,6 +178,30 @@ static LTUIAlertController *alertControllerAppearance;
 
 @interface LTUIAlertController ()
 
+@property(nonatomic, assign, readwrite) LTUIAlertControllerStyle preferredStyle;
+//@property(nonatomic, strong, readwrite) LTUIModalPresentationViewController *modalPresentationViewController;
+
+@property(nonatomic, strong) UIView *containerView;
+@property(nonatomic, strong) UIControl *maskView;
+
+@property(nonatomic, strong) UIView *scrollWrapView;
+@property(nonatomic, strong) UIScrollView *headerScrollView;
+@property(nonatomic, strong) UIScrollView *buttonScrollView;
+
+@property(nonatomic, strong) UIView *headerEffectView;
+@property(nonatomic, strong) UIView *cancelButtoneEffectView;
+
+@property(nonatomic, strong) UILabel *titleLabel;
+@property(nonatomic, strong) UILabel *messageLabel;
+//@property(nonatomic, strong) QMUIAlertAction *cancelAction;
+
+//@property(nonatomic, strong) NSMutableArray<QMUIAlertAction *> *alertActions;
+//@property(nonatomic, strong) NSMutableArray<QMUIAlertAction *> *destructiveActions;
+@property(nonatomic, strong) NSMutableArray<UITextField *> *alertTextFields;
+
+@property(nonatomic, assign) CGFloat keyboardHeight;
+@property(nonatomic, assign) BOOL isShowing;
+
 @end
 
 @implementation LTUIAlertController
@@ -109,7 +224,66 @@ static LTUIAlertController *alertControllerAppearance;
 
 - (void)didInitialized
 {
-    
+    self.alertContentMargin = [LTUIAlertController appearance].alertContentMargin;
+    self.alertContentMaximumWidth = [LTUIAlertController appearance].alertContentMaximumWidth;
+    self.alertSeperatorColor = [LTUIAlertController appearance].alertSeperatorColor;
+    self.alertContentCornerRadius = [LTUIAlertController appearance].alertContentCornerRadius;
+    self.alertTitleAttributes = [LTUIAlertController appearance].alertTitleAttributes;
+    self.alertMessageAttributes = [LTUIAlertController appearance].alertMessageAttributes;
+    self.alertButtonAttributes = [LTUIAlertController appearance].alertButtonAttributes;
+    self.alertButtonDisabledAttributes = [LTUIAlertController appearance].alertButtonDisabledAttributes;
+    self.alertCancelButtonAttributes = [LTUIAlertController appearance].alertCancelButtonAttributes;
+    self.alertDestructiveButtonAttributes = [LTUIAlertController appearance].alertDestructiveButtonAttributes;
+    self.alertButtonHeight = [LTUIAlertController appearance].alertButtonHeight;
+    self.alertHeaderBackgroundColor = [LTUIAlertController appearance].alertHeaderBackgroundColor;
+    self.alertButtonBackgroundColor = [LTUIAlertController appearance].alertButtonBackgroundColor;
+    self.alertButtonHighlightBackgroundColor = [LTUIAlertController appearance].alertButtonHighlightBackgroundColor;
+    self.alertHeaderInsets = [LTUIAlertController appearance].alertHeaderInsets;
+    self.alertTitleMessageSpacing = [LTUIAlertController appearance].alertTitleMessageSpacing;
+}
+
++ (instancetype)alertControllerWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(LTUIAlertControllerStyle)preferredStyle {
+    LTUIAlertController *alertController = [[self alloc] initWithTitle:title message:message preferredStyle:preferredStyle];
+    if (alertController) {
+        return alertController;
+    }
+    return nil;
+}
+
+- (instancetype)initWithTitle:(NSString *)title message:(NSString *)message preferredStyle:(LTUIAlertControllerStyle)preferredStyle {
+    self = [self init];
+    if (self) {
+        
+        self.isShowing = NO;
+        self.shouldRespondMaskViewTouch = preferredStyle == LTUIAlertControllerStyleActionSheet;
+        
+//        self.alertActions = [[NSMutableArray alloc] init];
+        self.alertTextFields = [[NSMutableArray alloc] init];
+//        self.destructiveActions = [[NSMutableArray alloc] init];
+        
+        self.containerView = [[UIView alloc] init];
+        
+        self.maskView = [[UIControl alloc] init];
+        self.maskView.alpha = 0;
+        self.maskView.backgroundColor = [UIColor blackColor];
+        [self.maskView addTarget:self action:@selector(handleMaskViewEvent:) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.scrollWrapView = [[UIView alloc] init];
+        self.headerEffectView = [[UIView alloc] init];
+        self.cancelButtoneEffectView = [[UIView alloc] init];
+        self.headerScrollView = [[UIScrollView alloc] init];
+        self.buttonScrollView = [[UIScrollView alloc] init];
+        
+        self.title = title;
+        self.message = message;
+        self.preferredStyle = preferredStyle;
+        
+//        [self updateHeaderBackgrondColor];
+//        [self updateEffectBackgroundColor];
+//        [self updateCornerRadius];
+        
+    }
+    return self;
 }
 
 - (void)viewDidLoad {
