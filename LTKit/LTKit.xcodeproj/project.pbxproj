@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		232F1698DC3904726716BF60 /* libPods-LTKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F53D5049DC571B49CCF2786 /* libPods-LTKitTests.a */; };
 		32809227794E2B4B5561F57C /* libPods-LTKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ECD38D3E2BA18DD2F7EC5D0C /* libPods-LTKitUITests.a */; };
+		8D0D346F1F852E410076421C /* LTUIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D0D346E1F852E410076421C /* LTUIHelper.m */; };
 		8D4997DB1F809D1E0092407A /* LTUICommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4997DA1F809D1E0092407A /* LTUICommonViewController.m */; };
 		8D4997DE1F8104E80092407A /* LTUIAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4997DD1F8104E80092407A /* LTUIAlertController.m */; };
 		8D4997E71F8380BA0092407A /* NSMutableParagraphStyle+LTKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4997E61F8380BA0092407A /* NSMutableParagraphStyle+LTKit.m */; };
@@ -55,6 +56,10 @@
 		4F53D5049DC571B49CCF2786 /* libPods-LTKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LTKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		560E22CC7C326F4362F0E9E0 /* Pods-LTKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKit/Pods-LTKit.release.xcconfig"; sourceTree = "<group>"; };
 		79BDFDBAF2E5BDD2174AEC4B /* Pods-LTKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTKitTests/Pods-LTKitTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D0D346A1F852C8E0076421C /* LTUICommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTUICommonDefines.h; sourceTree = "<group>"; };
+		8D0D346C1F852D450076421C /* LTUICore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LTUICore.h; sourceTree = "<group>"; };
+		8D0D346D1F852E410076421C /* LTUIHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUIHelper.h; sourceTree = "<group>"; };
+		8D0D346E1F852E410076421C /* LTUIHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUIHelper.m; sourceTree = "<group>"; };
 		8D4997D91F809D1E0092407A /* LTUICommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUICommonViewController.h; sourceTree = "<group>"; };
 		8D4997DA1F809D1E0092407A /* LTUICommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTUICommonViewController.m; sourceTree = "<group>"; };
 		8D4997DC1F8104E80092407A /* LTUIAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTUIAlertController.h; sourceTree = "<group>"; };
@@ -160,6 +165,10 @@
 		8D4997D61F809CDB0092407A /* LTCore */ = {
 			isa = PBXGroup;
 			children = (
+				8D0D346A1F852C8E0076421C /* LTUICommonDefines.h */,
+				8D0D346C1F852D450076421C /* LTUICore.h */,
+				8D0D346D1F852E410076421C /* LTUIHelper.h */,
+				8D0D346E1F852E410076421C /* LTUIHelper.m */,
 			);
 			path = LTCore;
 			sourceTree = "<group>";
@@ -686,6 +695,7 @@
 				8D7B0C861F7038B00043C168 /* LTComponentsViewController.m in Sources */,
 				8D7B0BFD1F6D0D070043C168 /* AppDelegate.m in Sources */,
 				8D7B0C901F72B5030043C168 /* LTBaseViewController.m in Sources */,
+				8D0D346F1F852E410076421C /* LTUIHelper.m in Sources */,
 				8D7B0C061F6D0D070043C168 /* LTKit.xcdatamodeld in Sources */,
 				8D7B0C8B1F72B4AA0043C168 /* LTKitViewController.m in Sources */,
 				8D4997DE1F8104E80092407A /* LTUIAlertController.m in Sources */,
