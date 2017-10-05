@@ -51,6 +51,7 @@ static NSUInteger alertControllerCount = 0;
 @interface LTUIAlertButtonWrapView : UIView
 
 //@property(nonatomic, strong) QMUIButton *button;
+@property (nonatomic, strong) UIButton *button;
 
 @end
 
@@ -59,6 +60,8 @@ static NSUInteger alertControllerCount = 0;
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.button = [[UIButton alloc] init];
+        [self addSubview:self.button];
 //        self.button = [[QMUIButton alloc] init];
 //        self.button.adjustsButtonWhenDisabled = NO;
 //        self.button.adjustsButtonWhenHighlighted = NO;
@@ -69,7 +72,7 @@ static NSUInteger alertControllerCount = 0;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-//    self.button.frame = self.bounds;
+    self.button.frame = self.bounds;
 }
 
 @end
