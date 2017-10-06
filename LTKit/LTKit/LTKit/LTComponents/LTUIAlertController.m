@@ -112,7 +112,7 @@ static NSUInteger alertControllerCount = 0;
     if (self) {
         self.buttonWrapView = [[LTUIAlertButtonWrapView alloc] init];
 //        self.button.qmui_automaticallyAdjustTouchHighlightedInScrollView = YES;
-        [self.button addTarget:self action:@selector(handleAlertActionEvent:) forControlEvents:UIControlEventTouchUpInside];
+//        [self.button addTarget:self action:@selector(handleAlertActionEvent:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
