@@ -533,6 +533,39 @@ static LTUIAlertController *alertControllerAppearance;
     }
 }
 
+- (NSArray *)orderedAlertActions:(NSArray *)actions {
+    NSMutableArray<LTUIAlertAction *> *newActions = [[NSMutableArray alloc] init];
+    // 按照用户addAction的先后顺序来排序
+    if (self.orderActionsByAddedOrdered) {
+        [newActions addObjectsFromArray:self.alertActions];
+        // 取消按钮不参与排序，所以先移除，在最后再重新添加
+        if (self.cancelAction) {
+            [newActions removeObject:self.cancelAction];
+        }
+    } else {
+        for (LTUIAlertAction *action in self.alertActions) {
+            if (action.style != LTUIAlertActionStyleCancel && action.style != LTUIAlertActionStyleDestructive) {
+                [newActions addObject:action];
+            }
+        }
+        for (LTUIAlertAction *action in self.destructiveActions) {
+            [newActions addObject:action];
+        }
+    }
+    if (self.cancelAction) {
+        [newActions addObject:self.cancelAction];
+    }
+    return newActions;
+}
+
+- (void)addCustomView:(UIView *)view {
+    if (self.alertTextFields.count > 0) {
+        [NSException raise:@"QMUIAlertController使用错误" format:@"UITextField和CustomView不能共存"];
+    }
+    _customView = view;
+    [self.headerScrollView addSubview:_customView];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
