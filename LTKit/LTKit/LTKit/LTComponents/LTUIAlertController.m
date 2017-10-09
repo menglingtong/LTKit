@@ -185,6 +185,23 @@ static LTUIAlertController *alertControllerAppearance;
         alertControllerAppearance.alertTitleMessageSpacing = 3;
         
 #pragma mark - sheet
+        alertControllerAppearance.sheetContentMargin = UIEdgeInsetsMake(10, 10, 10, 10);
+//        alertControllerAppearance.sheetContentMaximumWidth = [QMUIHelper screenSizeFor55Inch].width - UIEdgeInsetsGetHorizontalValue(alertControllerAppearance.sheetContentMargin);
+        alertControllerAppearance.sheetSeperatorColor = UIColorMake(211, 211, 219);
+        alertControllerAppearance.sheetTitleAttributes = @{NSForegroundColorAttributeName:UIColorMake(143, 143, 143),NSFontAttributeName:UIFontBoldMake(13),NSParagraphStyleAttributeName:[NSMutableParagraphStyle ltKit_paragraphStyleWithLineHeight:0 lineBreakMode:NSLineBreakByTruncatingTail]};
+        alertControllerAppearance.sheetMessageAttributes = @{NSForegroundColorAttributeName:UIColorMake(143, 143, 143),NSFontAttributeName:UIFontMake(13),NSParagraphStyleAttributeName:[NSMutableParagraphStyle ltKit_paragraphStyleWithLineHeight:0 lineBreakMode:NSLineBreakByTruncatingTail]};
+        alertControllerAppearance.sheetButtonAttributes = @{NSForegroundColorAttributeName:UIColorBlue,NSFontAttributeName:UIFontMake(20),NSKernAttributeName:@(0)};
+        alertControllerAppearance.sheetButtonDisabledAttributes = @{NSForegroundColorAttributeName:UIColorMake(129, 129, 129),NSFontAttributeName:UIFontMake(20),NSKernAttributeName:@(0)};
+        alertControllerAppearance.sheetCancelButtonAttributes = @{NSForegroundColorAttributeName:UIColorBlue,NSFontAttributeName:UIFontBoldMake(20),NSKernAttributeName:@(0)};
+        alertControllerAppearance.sheetDestructiveButtonAttributes = @{NSForegroundColorAttributeName:UIColorRed,NSFontAttributeName:UIFontMake(20),NSKernAttributeName:@(0)};
+        alertControllerAppearance.sheetCancelButtonMarginTop = 8;
+        alertControllerAppearance.sheetContentCornerRadius = (IOS_VERSION >= 9.0 ? 13 : 6);
+        alertControllerAppearance.sheetButtonHeight = (IOS_VERSION >= 9.0 ? 57 : 44);
+        alertControllerAppearance.sheetHeaderBackgroundColor = (IOS_VERSION < 8.0) ? UIColorWhite : UIColorMakeWithRGBA(247, 247, 247, 1);
+        alertControllerAppearance.sheetButtonBackgroundColor = alertControllerAppearance.sheetHeaderBackgroundColor;
+        alertControllerAppearance.sheetButtonHighlightBackgroundColor = UIColorMake(232, 232, 232);
+        alertControllerAppearance.sheetHeaderInsets = UIEdgeInsetsMake(16, 16, 16, 16);
+        alertControllerAppearance.sheetTitleMessageSpacing = 8;
         
     }
 }
@@ -560,7 +577,7 @@ static LTUIAlertController *alertControllerAppearance;
 
 - (void)addCustomView:(UIView *)view {
     if (self.alertTextFields.count > 0) {
-        [NSException raise:@"QMUIAlertController使用错误" format:@"UITextField和CustomView不能共存"];
+        [NSException raise:@"LTUIAlertController使用错误" format:@"UITextField和CustomView不能共存"];
     }
     _customView = view;
     [self.headerScrollView addSubview:_customView];
