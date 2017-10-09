@@ -112,7 +112,7 @@ static NSUInteger alertControllerCount = 0;
     if (self) {
         self.buttonWrapView = [[LTUIAlertButtonWrapView alloc] init];
 //        self.button.qmui_automaticallyAdjustTouchHighlightedInScrollView = YES;
-//        [self.button addTarget:self action:@selector(handleAlertActionEvent:) forControlEvents:UIControlEventTouchUpInside];
+        [self.button addTarget:self action:@selector(handleAlertActionEvent:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
 }
@@ -121,9 +121,14 @@ static NSUInteger alertControllerCount = 0;
 //    return self.buttonWrapView.button;
 //}
 
+- (UIButton *)button
+{
+    return self.buttonWrapView.button;
+}
+
 - (void)setEnabled:(BOOL)enabled {
     _enabled = enabled;
-//    self.button.enabled = enabled;
+    self.button.enabled = enabled;
 }
 
 - (void)handleAlertActionEvent:(id)sender {
@@ -270,9 +275,9 @@ static LTUIAlertController *alertControllerAppearance;
         self.isShowing = NO;
         self.shouldRespondMaskViewTouch = preferredStyle == LTUIAlertControllerStyleActionSheet;
         
-//        self.alertActions = [[NSMutableArray alloc] init];
+        self.alertActions = [[NSMutableArray alloc] init];
         self.alertTextFields = [[NSMutableArray alloc] init];
-//        self.destructiveActions = [[NSMutableArray alloc] init];
+        self.destructiveActions = [[NSMutableArray alloc] init];
         
         self.containerView = [[UIView alloc] init];
         

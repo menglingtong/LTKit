@@ -38,6 +38,7 @@ typedef NS_ENUM(NSInteger, LTUIAlertControllerStyle) {
 
 /// `QMUIAlertAction`对应的 button 对象
 //@property(nonatomic, strong, readonly) QMUIButton *button;
+@property (nonatomic, strong, readonly) UIButton *button;
 
 /// `QMUIAlertAction`对应的标题
 @property(nonatomic, copy, readonly) NSString *title;
